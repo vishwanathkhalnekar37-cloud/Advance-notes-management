@@ -1,0 +1,36 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  background-image: url('/images/wild-deer-nature.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.app-main {
+  flex: 1;
+  margin-top: 70px;
+  overflow-y: auto;
+}
+
+.app-content {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .app-main {
+    margin-left: 0;
+  }
+}

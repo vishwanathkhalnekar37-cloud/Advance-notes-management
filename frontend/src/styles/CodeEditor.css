@@ -1,0 +1,92 @@
+.code-editor-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #0d1117;
+  overflow: hidden;
+  position: relative;
+}
+
+.code-editor-toolbar {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  flex-wrap: wrap;
+  align-items: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  z-index: 100;
+}
+
+.code-editor-toolbar button {
+  flex-shrink: 0;
+}
+
+/* CodeMirror Wrapper - uses inline height style */
+.codemirror-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #0d1117;
+}
+
+/* CodeMirror Editor */
+.code-mirror-editor {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.code-mirror-editor .cm-editor {
+  width: 100% !important;
+  height: 100% !important;
+  background: #0d1117 !important;
+  color: #c9d1d9 !important;
+}
+
+.code-mirror-editor .cm-content {
+  padding: 16px 0 !important;
+}
+
+.code-mirror-editor .cm-line {
+  padding: 0 16px !important;
+}
+
+/* Format Button */
+.format-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.2);
+}
+
+.format-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.format-btn:active {
+  transform: translateY(0);
+}
+
+
+
+  transform: translateY(0);
+}
+
+.format-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}

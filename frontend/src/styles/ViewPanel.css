@@ -1,0 +1,125 @@
+.view-panel-wrapper {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.view-panel {
+  width: 100%;
+  height: 100%;
+  flex: 1 1 100%;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow: auto;
+}
+
+.view-panel.text-view {
+  padding: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #1e1e1e;
+}
+
+.view-panel.text-view .view-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.view-panel.text-view .text-line {
+  display: flex;
+  padding: 0;
+  min-height: 24px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.view-panel.text-view .line-number {
+  display: inline-flex;
+  align-items: center;
+  width: 50px;
+  padding: 0 10px;
+  background-color: #252526;
+  color: #858585;
+  text-align: right;
+  user-select: none;
+  border-right: 1px solid #3e3e42;
+  box-sizing: border-box;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.view-panel.text-view .line-content {
+  flex: 1;
+  padding: 0 15px;
+  color: #d4d4d4;
+  font-family: 'Courier New', monospace;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.view-panel.code-view {
+  padding: 0;
+  background: #1e1e1e;
+}
+
+.view-panel.json-view {
+  padding: 0;
+  background: #1e1e1e;
+}
+
+.view-panel.json-view.error {
+  padding: 20px;
+}
+
+.error-message {
+  color: #ef4444;
+  padding: 15px;
+  background: #3d1f1f;
+  border-left: 3px solid #ef4444;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+
+.error-message p {
+  margin: 5px 0;
+}
+
+/* Syntax highlighter overrides for better colors */
+.view-panel :global(.hljs) {
+  background: #1e1e1e !important;
+  color: #d4d4d4 !important;
+}
+
+.view-panel :global(.hljs-string) {
+  color: #ce9178 !important;
+}
+
+.view-panel :global(.hljs-number) {
+  color: #b5cea8 !important;
+}
+
+.view-panel :global(.hljs-literal) {
+  color: #569cd6 !important;
+}
+
+.view-panel :global(.hljs-attr) {
+  color: #9cdcfe !important;
+}
+
+.view-panel :global(.hljs-punctuation) {
+  color: #d4d4d4 !important;
+}
+
+.view-panel :global(.hljs-keyword) {
+  color: #569cd6 !important;
+}
