@@ -11,7 +11,7 @@ load_dotenv(env_file)
 # Database Configuration
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql://root:password@localhost:5432/notes_db"
+    "mysql+pymysql://root:password@localhost:3306/notes_db?charset=utf8mb4"
 )
 
 # JWT Configuration
