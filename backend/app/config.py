@@ -40,6 +40,8 @@ CORS_ORIGINS = [
     "http://127.0.0.1:5173",
     "https://advance-notes-management.vercel.app",
     "https://advance-notes-management.onrender.com",
+    "https://advance-notes-management-frontend.onrender.com",
+    os.getenv("FRONTEND_URL", "https://advance-notes-management.onrender.com"),
 ]
 
 # File Upload Configuration

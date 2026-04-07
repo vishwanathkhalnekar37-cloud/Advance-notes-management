@@ -1,6 +1,5 @@
 """Note model for storing user notes"""
 from sqlalchemy import Column, Integer, String, DateTime, Boolean, ForeignKey, Index, JSON, LargeBinary, TypeDecorator, Text
-from sqlalchemy.dialects.mysql import LONGTEXT
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from app.database import Base
@@ -12,13 +11,13 @@ class Note(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     owner_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
-    title = Column(LONGTEXT, nullable=False)
+    title = Column(Text, nullable=False)
     # Keep legacy content field for backwards compatibility
-    content = Column(LONGTEXT, nullable=True)
+    content = Column(Text, nullable=True)
     # Separate content fields for each mode (no DEFAULT allowed on LONGTEXT in MySQL)
-    content_text = Column(LONGTEXT, nullable=True)  # Text mode content
-    content_code = Column(LONGTEXT, nullable=True)  # Code mode content
-    content_json = Column(LONGTEXT, nullable=True)  # JSON mode content
+    content_text = Column(Text, nullable=True)  # Text mode content
+    content_code = Column(Text, nullable=True)  # Code mode content
+    content_json = Column(Text, nullable=True)  # JSON mode content
     content_type = Column(String(50), default="text")  # text, json, code, markdown
     tags = Column(JSON, default=[])  # Array of tags as JSON
     color = Column(String(50), default="#3b82f6")  # Color for note background
