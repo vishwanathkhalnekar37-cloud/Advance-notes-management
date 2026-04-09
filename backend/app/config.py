@@ -25,8 +25,9 @@ APP_NAME = "Notes Management System"
 APP_VERSION = "1.0.0"
 DEBUG = os.getenv("DEBUG", "True") == "True"
 
-# CORS Configuration
+# CORS Configuration - Production-ready
 CORS_ORIGINS = [
+    # Development
     "http://localhost",
     "http://localhost:3000",
     "http://localhost:3001",
@@ -38,11 +39,24 @@ CORS_ORIGINS = [
     "http://127.0.0.1:3002",
     "http://127.0.0.1:3003",
     "http://127.0.0.1:5173",
+    # Production
     "https://advance-notes-management.vercel.app",
     "https://advance-notes-management.onrender.com",
     "https://advance-notes-management-frontend.onrender.com",
+    # From environment variable (primary production URL)
     os.getenv("FRONTEND_URL", "https://advance-notes-management.onrender.com"),
 ]
+
+# CORS Methods and Headers - Explicit for production security
+CORS_METHODS = ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"]
+CORS_HEADERS = [
+    "Content-Type",
+    "Authorization",
+    "Accept",
+    "Accept-Language",
+    "X-Requested-With",
+]
+CORS_ALLOW_CREDENTIALS = True  # Needed for JWT authentication
 
 # File Upload Configuration
 MAX_FILE_SIZE = 5242880  # 5MB

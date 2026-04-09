@@ -2,7 +2,14 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import Base, engine
-from app.config import CORS_ORIGINS, APP_NAME, APP_VERSION
+from app.config import (
+    CORS_ORIGINS,
+    CORS_METHODS,
+    CORS_HEADERS,
+    CORS_ALLOW_CREDENTIALS,
+    APP_NAME,
+    APP_VERSION,
+)
 from app.routes import auth, notes
 
 # Create all database tables (skip if connection fails)
@@ -18,13 +25,13 @@ app = FastAPI(
     description="Production-ready Notes Management System with modern UI/UX"
 )
 
-# Add CORS middleware
+# Add CORS middleware with explicit configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_credentials=CORS_ALLOW_CREDENTIALS,
+    allow_methods=CORS_METHODS,
+    allow_headers=CORS_HEADERS,
 )
 
 # Include routers
